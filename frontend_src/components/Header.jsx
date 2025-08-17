@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button.jsx'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 
 const Header = () => {
+  const { t } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -20,21 +22,21 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-blue-900 transition-colors">Home</a>
-            <a href="#about" className="text-gray-700 hover:text-blue-900 transition-colors">About</a>
-            <a href="#services" className="text-gray-700 hover:text-blue-900 transition-colors">Services</a>
-            <a href="#faq" className="text-gray-700 hover:text-blue-900 transition-colors">FAQ</a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-900 transition-colors">Contact</a>
+            <a href="#home" className="text-gray-700 hover:text-blue-900 transition-colors">{t('header.home')}</a>
+            <a href="#about" className="text-gray-700 hover:text-blue-900 transition-colors">{t('header.about')}</a>
+            <a href="#services" className="text-gray-700 hover:text-blue-900 transition-colors">{t('header.services')}</a>
+            <a href="#faq" className="text-gray-700 hover:text-blue-900 transition-colors">{t('header.faq')}</a>
+            <a href="#contact" className="text-gray-700 hover:text-blue-900 transition-colors">{t('header.contact')}</a>
           </nav>
 
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm text-gray-600">
               <Phone size={16} />
-              <span>(555) 123-4567</span>
+              <span>{t('header.phone')}</span>
             </div>
             <Button className="bg-blue-900 hover:bg-blue-800">
-              Book Appointment
+              {t('header.book')}
             </Button>
           </div>
 
@@ -52,17 +54,17 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <nav className="flex flex-col space-y-4">
-              <a href="#home" className="text-gray-700 hover:text-blue-900 transition-colors">Home</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-900 transition-colors">About</a>
-              <a href="#services" className="text-gray-700 hover:text-blue-900 transition-colors">Services</a>
-              <a href="#faq" className="text-gray-700 hover:text-blue-900 transition-colors">FAQ</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-900 transition-colors">Contact</a>
+              <a href="#home" className="text-gray-700 hover:text-blue-900 transition-colors">{t('header.home')}</a>
+              <a href="#about" className="text-gray-700 hover:text-blue-900 transition-colors">{t('header.about')}</a>
+              <a href="#services" className="text-gray-700 hover:text-blue-900 transition-colors">{t('header.services')}</a>
+              <a href="#faq" className="text-gray-700 hover:text-blue-900 transition-colors">{t('header.faq')}</a>
+              <a href="#contact" className="text-gray-700 hover:text-blue-900 transition-colors">{t('header.contact')}</a>
               <div className="flex items-center space-x-2 text-sm text-gray-600 pt-2">
                 <Phone size={16} />
-                <span>(555) 123-4567</span>
+                <span>{t('header.phone')}</span>
               </div>
               <Button className="bg-blue-900 hover:bg-blue-800 w-full">
-                Book Appointment
+                {t('header.book')}
               </Button>
             </nav>
           </div>

@@ -1,11 +1,12 @@
 # Mindful Wellness Psychology Office Website
 
-A professional psychology office website built with Flask backend and React frontend.
+A professional psychology office website built with Flask backend and React frontend, featuring internationalization support for English and Portuguese.
 
 ## Features
 
 - **Professional Design**: Modern, calming design suitable for a psychology practice
 - **Responsive Layout**: Works on desktop, tablet, and mobile devices
+- **Internationalization**: Full support for English and Portuguese with language toggle
 - **Contact Form**: Functional contact form with backend API integration
 - **Services Display**: Dynamic services loaded from backend API
 - **Interactive FAQ**: Accordion-style frequently asked questions
@@ -26,7 +27,21 @@ A professional psychology office website built with Flask backend and React fron
 - Tailwind CSS for styling
 - Shadcn/ui components
 - Lucide React icons
+- i18next for internationalization
+- react-i18next for React integration
 - Responsive design
+
+## Internationalization
+
+The website supports both English and Portuguese languages:
+- **Language Toggle**: Located in the top-right corner of the homepage
+- **Automatic Detection**: Detects user's browser language preference
+- **Persistent Selection**: Language choice is saved in localStorage
+- **Complete Translation**: All user-facing text is translated
+
+### Supported Languages
+- 🇺🇸 English (default)
+- 🇧🇷 Portuguese (Português)
 
 ## API Endpoints
 
@@ -57,6 +72,7 @@ The frontend is built and served from the Flask static directory. To modify the 
 
 1. Install Node.js dependencies (if making changes):
    ```bash
+   cd frontend_src
    npm install
    ```
 2. Make changes to frontend_src files
@@ -65,6 +81,13 @@ The frontend is built and served from the Flask static directory. To modify the 
    npm run build
    ```
 4. Copy built files to src/static/
+
+### Adding New Languages
+To add support for additional languages:
+
+1. Update `frontend_src/i18n.js` with new language resources
+2. Add the new language to the `LanguageToggle.jsx` component
+3. Rebuild the frontend
 
 ## Deployment
 
@@ -81,6 +104,14 @@ The application uses SQLite database with the following models:
 - CORS configured for cross-origin requests
 - Input validation on contact forms
 - SQL injection protection via SQLAlchemy ORM
+
+## Customization
+
+To customize the website with your own data:
+1. Update the translation files in `frontend_src/i18n.js`
+2. Modify the services data in the Flask backend
+3. Replace placeholder images in the assets folder
+4. Update contact information and credentials
 
 ## License
 
